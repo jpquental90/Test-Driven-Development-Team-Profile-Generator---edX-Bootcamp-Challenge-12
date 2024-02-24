@@ -13,3 +13,18 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
+const teamMembers = [];
+
+// Function to gather information about the team manager
+function gatherManagerInfo() {
+    inquirer.prompt([
+
+    ]).then((answers) => {
+
+        const manager = new Manager(/* pass the answers as arguments */);
+
+        teamMembers.push(manager);
+
+        showMenu();
+    });
+}
