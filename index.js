@@ -124,3 +124,12 @@ function gatherInternInfo() {
         showMenu();
     });
 }
+
+// Function to generate HTML and write it to a file
+function generateHTML() {
+    const html = render(teamMembers);
+    fs.writeFileSync(outputPath, html);
+    console.log(`The team profile has been generated! Check ${outputPath}`);
+}
+
+gatherManagerInfo();
