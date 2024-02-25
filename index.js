@@ -44,3 +44,23 @@ function gatherManagerInfo() {
         showMenu();
     });
 }
+
+// Function to show the menu and handle user choices
+function showMenu() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "choice",
+            message: "What do you want to do?",
+            choices: ["Add an engineer", "Add an intern", "Finish building the team"]
+        }
+    ]).then((answers) => {
+        if (answers.choice === "Add an engineer") {
+            gatherEngineerInfo();
+        } else if (answers.choice === "Add an intern") {
+            gatherInternInfo();
+        } else {
+            generateHTML();
+        }
+    });
+}
