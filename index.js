@@ -18,13 +18,29 @@ const teamMembers = [];
 // Function to gather information about the team manager
 function gatherManagerInfo() {
     inquirer.prompt([
-
+        {
+            type: "input",
+            name: "name",
+            message: "Enter the manager's name:"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "Enter the manager's employee ID:"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "Enter the manager's email address:"
+        },
+        {
+            type: "input",
+            name: "officeNumber",
+            message: "Enter the manager's office number:"
+        }
     ]).then((answers) => {
-
-        const manager = new Manager(/* pass the answers as arguments */);
-
+        const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
         teamMembers.push(manager);
-
         showMenu();
     });
 }
